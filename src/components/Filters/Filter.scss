@@ -1,0 +1,46 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filter-option-container > label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/*----------------------------- 
+-------Filter By Color---------
+------------------------------*/
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+  }
+
+  div[value="black"] {
+    background-color: black;
+    border: none;
+  }
+
+  div[value="white"] {
+    background-color: white;
+  }
+  div[value="blue"] {
+    background-color: blue;
+    border: none;
+  }
+  div[value="red"] {
+    background-color: red;
+    border: none;
+  }
+  div[value="yellow"] {
+    background-color: yellow;
+  }
+}
