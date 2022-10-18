@@ -12,8 +12,8 @@ const SelectedFilters = ({ filters, setFilters }) => {
             <button>X</button>
           </div>
         )}
-        {filters.color.map((category) => (
-          <div className="selected-filter-options">
+        {filters.color.map((category, index) => (
+          <div key={index} className="selected-filter-options">
             <p>{category}</p>
             <button>X</button>
           </div>

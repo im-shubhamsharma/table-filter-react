@@ -11,6 +11,7 @@ const table = () => {
       ? store.product.filteredProducts
       : store.product.products
   );
+
   const data = useSelector((store) => store.product.products);
 
   // pagination code starts----------------------------->
@@ -51,7 +52,9 @@ const table = () => {
     } else {
       setTableData(currentPost);
     }
-  }, [currentPage, searchInput]);
+  }, [currentPage, searchInput, posts]);
+
+  
 
   // function to sort tableData starts---------------------->
 
