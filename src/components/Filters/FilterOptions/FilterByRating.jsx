@@ -2,17 +2,11 @@ import React, { useState, useEffect } from "react";
 import star from "../../../assets/star.png";
 
 const FilterByRating = ({ setFilters }) => {
-  const [ratings, setRatings] = useState({
-    fourandabove: false,
-    threeandabove: false,
-  });
+  const [ratings, setRatings] = useState("");
 
   const handleChange = (e) => {
-    const { name, checked } = e.target;
-    setRatings((prevRating) => ({
-      ...prevRating,
-      [name]: checked,
-    }));
+    const value = e.target.value;
+    setRatings(e.target.value);
   };
 
   useEffect(() => {
@@ -21,35 +15,23 @@ const FilterByRating = ({ setFilters }) => {
       rating: ratings,
     }));
   }, [ratings]);
-  
+
 
   return (
     <div className="filter-option-container">
       Filter By Rating
-      <div className="rating-filter">
-        <input
-          type="checkbox"
-          id="fourandabove"
-          name="fourandabove"
-          checked={ratings.fourandabove}
-          onChange={handleChange}
-        />
-        <label htmlFor="fourandabove">
-          4<img width="20px" src={star} /> & above
-        </label>
-      </div>
-      <div className="rating-filter">
-        <input
-          type="checkbox"
-          id="threeandabove"
-          name="threeandabove"
-          checked={ratings.threeandabove}
-          onChange={handleChange}
-        />
-        <label htmlFor="threeandabove">
-          3<img width="20px" src={star} /> & above
-        </label>
-      </div>
+      <input
+        min="0"
+        max="5"
+        value={ratings}
+        type="range"
+        onChange={handleChange}
+      />
+      {ratings > 0 && (
+        <div className="price-input">
+          Rating: {ratings} <img width="20px"  src={star} />
+        </div>
+      )}
     </div>
   );
 };

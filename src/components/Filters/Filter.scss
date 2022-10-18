@@ -15,10 +15,15 @@
   }
 }
 
-.filter-option-container > label {
+.filter-option-container > {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }
 /*----------------------------- 
 -------Filter By Category---------
@@ -29,6 +34,7 @@
   border-radius: 10px;
   border: none;
   padding: 0.8rem;
+  cursor: pointer;
 
   &:focus,
   &:active {
@@ -80,6 +86,7 @@
 ------------------------------*/
 .price-input {
   display: flex;
+  align-items: center;
   gap: 0.3em;
 
   input {
@@ -132,6 +139,6 @@
     align-items: center;
   }
   button {
-    padding: 0.5rem;
+    padding: 0.1rem 0.5rem;
   }
 }

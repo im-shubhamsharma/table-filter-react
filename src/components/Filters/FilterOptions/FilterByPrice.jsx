@@ -10,12 +10,11 @@ const FilterByPrice = ({ setFilters }) => {
       ...filter,
       price: value,
     }));
-    console.log(value);
   };
 
   return (
     <div className="filter-option-container">
-      Filter By Price
+      <span>Filter By Price</span>
       <input
         min="0"
         max="100000"

@@ -46,19 +46,15 @@ const productSlice = createSlice({
 
       // condition to filter products as per color
       const rating = action.payload.rating;
-      if (rating.threeandabove) {
-        if (filterArray !== null) {
-          filterArray = filterArray.filter((item) => item.rating >= 3);
-        } else {
-          filterArray = state.products.filter((item) => item.rating >= 3);
+        if (rating) {
+          if (filterArray !== null) {
+            filterArray = filterArray.filter((item) => item.rating >= rating);
+          } else {
+            filterArray = state.products.filter(
+              (item) => item.rating >= rating
+            );
+          }
         }
-      } else if (rating.fourandabove) {
-        if (filterArray !== null) {
-          filterArray = filterArray.filter((item) => item.rating >= 4);
-        } else {
-          filterArray = state.products.filter((item) => item.rating >= 4);
-        }
-      }
 
 
 

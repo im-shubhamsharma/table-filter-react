@@ -3,21 +3,50 @@
   height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  .search-bar {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+
+    input {
+      width: 100%;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+      background-color: #ffa384;
+      border-radius: 10px;
+      border: none;
+      color: #543855;
+    }
+  }
 
   table {
     text-align: center;
 
-    tr>th{
-        border-bottom: 4px solid #ffa384;
+    tr > th {
+      border-bottom: 4px solid #ffa384;
+
+      span {
+        background-color: #ffa384;
+        font-size: 1rem;
+      }
+
+      button {
+        padding: 0 0.7rem;
+
+        span {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
     }
 
-    tr>td{
-        text-transform: capitalize;
+    tr > td {
+      text-transform: capitalize;
     }
 
-    tbody>tr:nth-child(2n){
-        background-color: #FBE7C6;
+    tbody > tr:nth-child(2n) {
+      background-color: #fbe7c6;
     }
   }
 }

@@ -17,20 +17,17 @@ const Filter = () => {
   const [filters, setFilters] = useState({
     category: "",
     color: [],
-    rating: {},
   });
 
   const clearAllFilters = () => {
     setFilters({
       category: "",
       color: [],
-      rating: {},
     });
     dispatch(
       filterProductsAll({
         category: "",
         color: [],
-        rating: {},
       })
     );
   };

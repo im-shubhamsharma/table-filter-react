@@ -3,6 +3,9 @@ import Table from "./components/Table/Table";
 import "./App.scss";
 
 function App() {
+
+  
+
   return (
     <div className="app">
       <div className="filter-container">

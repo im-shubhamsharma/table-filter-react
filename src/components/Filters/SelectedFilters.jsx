@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../../assets/star.png"
+import star from "../../assets/star.png";
 
 const SelectedFilters = ({ filters, setFilters }) => {
   return (
@@ -24,18 +24,19 @@ const SelectedFilters = ({ filters, setFilters }) => {
             <button>X</button>
           </div>
         )}
-        {filters.rating.fourandabove && (
+        {filters.rating && filters.rating > 0 && (
           <div className="selected-filter-options">
-            <label>
-              4<img width="20px" src={star} /> & above
-            </label>
-            <button>X</button>
-          </div>
-        )}
-        {filters.rating.threeandabove && (
-          <div className="selected-filter-options">
-            <label>
-              3<img width="20px" src={star} /> & above
+            <label
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "5px",
+                fontSize: "1rem",
+              }}
+            >
+              {filters.rating}
+              <img width="15px" src={star} />
             </label>
             <button>X</button>
           </div>
