@@ -10,25 +10,64 @@ const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    //reducer to filter by category
-    filterByCategory: (state, action) => {
-      const category = action.payload.toLowerCase();
-      state.filteredProducts = state.products.filter((item) =>
-        category === "all" ? item : item.category === category
-      );
-    },
+    filterProductsAll: (state, action) => {
+      let filterArray = null;
+      // condition to filter products as per category if categorye exist in our filters.
+      const category = action.payload.category.toLowerCase();
+      if (category) {
+        filterArray = state.products.filter(
+          (item) => item.category == category
+        );
+      }
 
-    //reducer to filter by category
-    filterByColor: (state, action) => {
-      const color = action.payload.toLowerCase();
-      state.filteredProducts = state.products.filter(
-        (item) => item.color === color
-      );
+      // condition to filter products as per color
+      const color = action.payload.color;
+      if (color.length > 0) {
+        if (filterArray !== null) {
+          filterArray = filterArray.filter((item) =>
+            color.includes(item.color)
+          );
+        } else {
+          filterArray = state.products.filter((item) =>
+            color.includes(item.color)
+          );
+        }
+      }
+
+      // condition to filter products as per color
+      const price = parseInt(action.payload.price);
+      if (price) {
+        if (filterArray !== null) {
+          filterArray = filterArray.filter((item) => item.price <= price);
+        } else {
+          filterArray = state.products.filter((item) => item.price <= price);
+        }
+      }
+
+      // condition to filter products as per color
+      const rating = action.payload.rating;
+      if (rating.threeandabove) {
+        if (filterArray !== null) {
+          filterArray = filterArray.filter((item) => item.rating >= 3);
+        } else {
+          filterArray = state.products.filter((item) => item.rating >= 3);
+        }
+      } else if (rating.fourandabove) {
+        if (filterArray !== null) {
+          filterArray = filterArray.filter((item) => item.rating >= 4);
+        } else {
+          filterArray = state.products.filter((item) => item.rating >= 4);
+        }
+      }
+
+
+
+      state.filteredProducts = filterArray;
     },
   },
 });
 
 // console.log(productSlice)
 
-export const { filterByCategory, filterByColor } = productSlice.actions;
+export const { filterProductsAll } = productSlice.actions;
 export default productSlice.reducer;

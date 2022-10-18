@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const FilterByPrice = ({ setFilters }) => {
-  const [price, setPrice] = useState("30000");
+  const [price, setPrice] = useState("100000");
 
   const handleChange = (e) => {
     const value = e.target.value;

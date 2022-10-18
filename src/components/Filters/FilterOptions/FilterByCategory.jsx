@@ -1,24 +1,33 @@
-import React from 'react'
-import { filterByCategory } from '../../../redux/features/products/productSlice';
-import {useDispatch} from 'react-redux'
+import React, { useEffect, useState } from "react";
 
-const FilterByCategory = ({setFilters}) => {
-
-
+const FilterByCategory = ({ setFilters }) => {
+  const [category, setCategory] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
+    setCategory(value);
+  };
+
+  useEffect(() => {
     setFilters((filter) => ({
       ...filter,
-      category: [...filter.category, value],
+      category: category,
     }));
-  }
+  }, [category]);
+
+  // const handleChange = (e) => {
+  //   const value = e.target.value;
+  //   setFilters((filter) => ({
+  //     ...filter,
+  //     category: [...filter.category, value],
+  //   }));
+  // }
 
   return (
     <div className="filter-option-container">
       <label>
         Filter by category
-        <select onChange={handleChange}>
+        <select className="filter-select" onChange={handleChange}>
           <option>All</option>
           <option>Electronics</option>
           <option>Shoes</option>

@@ -1,0 +1,11 @@
+.pagination-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+
+    button{
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+    }
+}

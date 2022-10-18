@@ -1,0 +1,23 @@
+.table-sub-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  table {
+    text-align: center;
+
+    tr>th{
+        border-bottom: 4px solid #ffa384;
+    }
+
+    tr>td{
+        text-transform: capitalize;
+    }
+
+    tbody>tr:nth-child(2n){
+        background-color: #FBE7C6;
+    }
+  }
+}
