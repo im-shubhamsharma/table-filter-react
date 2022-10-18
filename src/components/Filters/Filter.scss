@@ -19,8 +19,8 @@
   gap: 1rem;
 
   div {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 1px solid;
   }
 
@@ -43,4 +43,34 @@
   div[value="yellow"] {
     background-color: yellow;
   }
+}
+
+
+/*----------------------------- 
+-------Filter By Price---------
+------------------------------*/
+.price-input{
+  display: flex;
+  gap: 0.3em;
+
+  input{
+     width: 50%;
+     
+  }
+}
+
+
+/*----------------------------- 
+-------Filter By Rating---------
+------------------------------*/
+.rating-filter{
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  
+  label{
+    display:flex;
+    align-items: center;
+  }
+ 
 }
