@@ -6,6 +6,7 @@ import FilterByPrice from "./FilterOptions/FilterByPrice";
 import FilterByRating from "./FilterOptions/FilterByRating";
 import SelectedFilters from "./SelectedFilters";
 import { filterProductsAll } from "../../redux/features/products/productSlice";
+import { Link } from "react-router-dom";
 import "./Filter.scss";
 
 const Filter = () => {
@@ -32,8 +33,10 @@ const Filter = () => {
   return (
     <div className="sidebar-container">
       <div>
-        <h2>Inventory Book</h2>
-        <hr style={{ width: "100%", marginBottom:"1.5rem" }} />
+        <Link to="/" className="logo">
+          <h2>Inventory Book</h2>
+        </Link>
+        <hr style={{ width: "100%", marginBottom: "1.5rem" }} />
         {/* <hr style={{ width: "100%", margin: "0" }} /> */}
 
         <div className="filters">

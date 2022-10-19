@@ -5,22 +5,23 @@ const Modal = ({ showModal, setShowModal, modalErrors }) => {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    modalRef.current.classList.add("active");
+    const timeout1 = setTimeout(() => {
+      modalRef.current.classList.add("active");
+    }, 100);
 
-    if (showModal) {
-      setTimeout(() => {
-        setShowModal(false);
-      }, 5000);
-    }
+    const timeout2 = setTimeout(() => {
+      setShowModal(false);
+    }, 7000);
 
     const modalAnimationTimeout = setTimeout(() => {
       modalRef.current.classList.remove("active");
-    }, 4000);
-
+    }, 6000);
 
     return () => {
-        clearTimeout(modalAnimationTimeout)
-    }
+      clearTimeout(modalAnimationTimeout);
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+    };
   });
 
   return (
