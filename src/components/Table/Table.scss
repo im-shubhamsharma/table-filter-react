@@ -1,43 +1,62 @@
-.table-sub-container {
+@use "../../styles/variables";
+
+.table-container {
   width: 100%;
-  height: 90vh;
+  padding: 0.2rem 0 1rem 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  .search-bar {
+  // table header start------------
+  .table-header {
+    width: 100%;
     padding: 0 2rem;
-    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
 
-    input {
+    input,
+    input::placeholder,
+    button {
       width: 100%;
-      padding: 1rem 0.5rem;
-      text-align: center;
-      font-size: 1.2rem;
-      background-color: #ffa384;
-      border-radius: 10px;
+      padding: 1rem 2rem;
+      border-radius: 12px;
       border: none;
-      color: #543855;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 500;
+      background-color: variables.$accent-dark;
+      color: variables.$text-color;
+    }
+
+    .search-bar {
+      flex-basis: 70%;
+    }
+
+    .add-new-btn {
+      flex-basis: 30%;
     }
   }
+  // table header ends---------------
 
   table {
+    width: 100%;
     text-align: center;
 
     tr > th {
-      border-bottom: 4px solid #ffa384;
+      border-bottom: 5px solid variables.$accent-dark;
 
       span {
-        background-color: #ffa384;
+        background-color: variables.$accent-dark;
         font-size: 1rem;
       }
 
       button {
-        padding: 0 0.7rem;
-
-        span {
-          font-size: 1.5rem;
-          font-weight: bold;
-        }
+        margin-left: 6px;
+      }
+      span {
+        margin-left: 6px;
+        font-size: 1.1rem;
       }
     }
 
@@ -46,7 +65,7 @@
     }
 
     tbody > tr:nth-child(2n) {
-      background-color: #fbe7c6;
+      background-color: variables.$accent-light;
     }
   }
 }

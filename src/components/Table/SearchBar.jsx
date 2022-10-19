@@ -40,7 +40,6 @@ const SearchBar = ({ data, setSearchData, setSearchInput }) => {
         type="text"
         placeholder="Search"
         name="input"
-        // value={input}
         onChange={debounce(handleChange)}
       />
     </div>

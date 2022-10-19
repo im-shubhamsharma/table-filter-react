@@ -1,0 +1,41 @@
+@use "../../styles/variables";
+
+.add-data-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .add-data-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem;
+    background-color: variables.$bg-dark;
+    border: 5px solid variables.$accent-dark;
+    border-radius: 1rem;
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      border: none;
+      background-color: variables.$bg-light;
+      color: variables.$text-color;
+
+      &:active,
+      &:focus {
+        outline: 5px solid variables.$accent-dark;
+      }
+    }
+
+    button {
+      background-color: variables.$accent-dark;
+    }
+  }
+}

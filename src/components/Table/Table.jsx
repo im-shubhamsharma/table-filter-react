@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import TableData from "./TableData";
 import SearchBar from "./SearchBar";
 import Pagination from "../Pagination/Pagination";
+import { Link } from "react-router-dom";
 import "./Table.scss";
 
 const table = () => {
@@ -54,8 +55,6 @@ const table = () => {
     }
   }, [currentPage, searchInput, posts]);
 
-  
-
   // function to sort tableData starts---------------------->
 
   const [sort, setSort] = useState(true); // true for ascending and false for descending
@@ -97,54 +96,69 @@ const table = () => {
     setTableData(newTableData);
   };
 
-  // console.log(tableData);
-
   return (
-    <div className="table-sub-container">
-      <SearchBar
-        data={data}
-        setSearchData={setSearchData}
-        setSearchInput={setSearchInput}
-      />
+    <div className="table-container">
+      <div>
+        {/* Table Header - Search and Add New Button */}
+        <div className="table-header">
+          <SearchBar
+            data={data}
+            setSearchData={setSearchData}
+            setSearchInput={setSearchInput}
+          />
+          <Link to="/add" className="add-new-btn">
+            <button className="add-new">Add New Product</button>
+          </Link>
+        </div>
 
-      {tableData && (
-        <table cellSpacing="0" cellPadding="20px">
-          <thead>
-            <tr>
-              <th>
-                Product Name{" "}
-                <span>
-                  <button onClick={sortDataDesc}> &uArr;</button>
-                  Sort
-                  <button onClick={sortDataAsc}> &dArr;</button>
-                </span>
-              </th>
-              <th>
-                Price{" "}
-                <button onClick={()=>{
-                  sortByPrice();
-                  setSort(prev => !prev)
-                }}>
-                  {sort ? <span>&#8595;</span> : <span>&#8593;</span>}
-                </button>
-              </th>
-              <th>Color</th>
-              <th>Category</th>
-              <th>Ratings</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tableData.map((item) => (
-              <TableData key={item.id} item={item} />
-            ))}
-          </tbody>
-        </table>
-      )}
-      <Pagination
-        postPerPage={postPerPage}
-        totalPosts={productsData.length}
-        paginate={paginate}
-      />
+        {/* Table Data */}
+        {tableData && (
+          <table cellSpacing="0" cellPadding="20px">
+            <thead>
+              <tr>
+                <th>
+                  Product Name
+                  <span>
+                    <button onClick={sortDataDesc}> &uArr;</button>
+                    Sort
+                    <button onClick={sortDataAsc}> &dArr;</button>
+                  </span>
+                </th>
+                <th>
+                  Price
+                  <button
+                    onClick={() => {
+                      sortByPrice();
+                      setSort((prev) => !prev);
+                    }}
+                  >
+                    {sort ? <span>&dArr;</span> : <span>&uArr;</span>}
+                  </button>
+                </th>
+                <th>Color</th>
+                <th>Category</th>
+                <th>Ratings</th>
+                <th>Stock</th>
+                <th>Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableData.map((item) => (
+                <TableData key={item.id} item={item} />
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
+
+      {/* Pagination */}
+      <div className="pagination">
+        <Pagination
+          postPerPage={postPerPage}
+          totalPosts={productsData.length}
+          paginate={paginate}
+        />
+      </div>
     </div>
   );
 };

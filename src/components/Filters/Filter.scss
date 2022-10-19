@@ -1,28 +1,41 @@
-.filters {
+@use "../../styles/variables";
+
+.sidebar-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.2rem 0 5rem 0;
+  font-weight: 500;
 
-  .filters-button-container {
-    width: 100%;
+  .filters {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
-  button {
-    flex-basis: 50%;
-    padding: 0.8rem;
+  .filters-button-container {
+    display: flex;
+    gap: 0.8rem;
+
+    button {
+      padding: 0.5rem 1rem;
+    }
   }
 }
 
 .filter-option-container {
   display: flex;
   flex-direction: column;
+  font-weight: 500;
+  // border-bottom: 1px solid variables.$accent-light;
+  padding-bottom: 10px;
 
   label {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   }
 }
 /*----------------------------- 
@@ -30,11 +43,14 @@
 ------------------------------*/
 
 .filter-select {
-  background-color: #ffa384;
+  background-color: variables.$accent-light;
   border-radius: 10px;
   border: none;
-  padding: 0.8rem;
+  padding: 0.5rem;
   cursor: pointer;
+  text-align: center;
+  font-size: 1.2rem;
+ 
 
   &:focus,
   &:active {
@@ -42,7 +58,8 @@
   }
 
   option {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    
   }
 }
 
@@ -52,12 +69,14 @@
 .color-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
 
   div {
     width: 40px;
     height: 40px;
     border: 1px solid;
+    border-radius: 50%;
+    opacity: 0.7;
   }
 
   div[value="black"] {
@@ -84,18 +103,25 @@
 /*----------------------------- 
 -------Filter By Price---------
 ------------------------------*/
+
+input[type="range"] {
+  width: 100%;
+  accent-color: variables.$accent-dark;
+  margin-top: 12px;
+}
+
 .price-input {
   display: flex;
   align-items: center;
-  gap: 0.3em;
+  gap: 1em;
+  margin-top: 5px;
 
   input {
-    width: 50%;
-    background-color: #ffa384;
-    border-radius: 10px;
+    width: 40%;
+    background-color: variables.$accent-light;
+    border-radius: 5px;
     border: none;
-    color: #543855;
-    padding: 0.2rem 0.8rem;
+    text-align: center;
   }
 }
 
@@ -116,9 +142,14 @@
 /*----------------------------- 
 -------Selected Filter---------
 ------------------------------*/
+.selected-filter-container{
+  // display: flex;
+}
+
+
 .selected-filter-options-container {
   display: flex;
-  gap: 10px;
+  gap: 5px;
   flex-wrap: wrap;
 }
 
@@ -127,18 +158,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 0 10px;
+  gap: 0.4rem;
+  padding: 0 6px;
   background-color: #ccc;
-  border-radius: 1rem;
+  background-color: variables.$accent-light;
+  border-radius: 12px;
   font-size: 0.8rem;
-  margin-top: 1rem;
+  margin-top: 0.2rem;
 
   label {
     display: flex;
     align-items: center;
-  }
-  button {
-    padding: 0.1rem 0.5rem;
   }
 }

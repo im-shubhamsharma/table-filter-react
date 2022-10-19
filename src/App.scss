@@ -1,3 +1,5 @@
+@use "./styles/variables";
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -8,8 +10,8 @@
 body {
   margin: 0;
   padding: 0;
-  color: #543855;
-  font-size: 1.3rem;
+  color: variables.$text-color;
+  font-size: 1.2rem;
 }
 
 .app {
@@ -17,30 +19,26 @@ body {
   display: flex;
 }
 
-.filter-container {
-  flex-basis: 20%;
-  min-height: 100vh;
-  border-right: 2px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  background-color: #74bdcb;
+.sidebar {
+  flex-basis: 22%;
+  padding: 0rem 2rem;
+  background-color: variables.$bg-dark;
 }
 
-.table-container {
-  flex-basis: 80%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
-  background-color: #e7f2f8;
+.main-container {
+  position: relative;
+  height: 100vh;
+  flex-basis: 78%;
+  padding: 1rem 0;
+  background-color: variables.$bg-light;
+  overflow-y: auto;
 }
 
 button {
-  background-color: #ffa384;
-  border-radius: 10px;
+  background-color: variables.$accent-dark;
+  border-radius: 12px;
   border: none;
-  color: #543855;
+  color: variables.$text-color;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   cursor: pointer;

@@ -6,6 +6,7 @@ export const data = [
     price: 49000,
     category: "electronics",
     rating: 4.5,
+    stock: 4000,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const data = [
     price: 5200,
     category: "shoes",
     rating: 4.2,
+    stock: 1200,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const data = [
     price: 1200,
     category: "clothing",
     rating: 4.0,
+    stock: 1800,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const data = [
     price: 600,
     category: "groceries",
     rating: 4.1,
+    stock: 8000,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const data = [
     price: 12000,
     category: "electronics",
     rating: 3.5,
+    stock: 4200,
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ export const data = [
     price: 2000,
     category: "electronics",
     rating: 3.9,
+    stock: 3280,
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ export const data = [
     price: 3200,
     category: "travel",
     rating: 3.7,
+    stock: 4110,
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ export const data = [
     price: 200,
     category: "accesories",
     rating: 2.0,
+    stock: 400,
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ export const data = [
     price: 59000,
     category: "electronics",
     rating: 4.5,
+    stock: 800,
   },
   {
     id: 10,
@@ -78,6 +87,7 @@ export const data = [
     price: 159000,
     category: "electronics",
     rating: 4.57,
+    stock: 1100,
   },
   {
     id: 11,
@@ -86,6 +96,7 @@ export const data = [
     price: 120,
     category: "groceries",
     rating: 4.0,
+    stock: 4000,
   },
   {
     id: 12,
@@ -94,6 +105,7 @@ export const data = [
     price: 220,
     category: "groceries",
     rating: 3.9,
+    stock: 1750,
   },
   {
     id: 13,
@@ -102,6 +114,7 @@ export const data = [
     price: 360,
     category: "groceries",
     rating: 4.1,
+    stock: 1900,
   },
   {
     id: 14,
@@ -110,5 +123,6 @@ export const data = [
     price: 200,
     category: "accesories",
     rating: 4.1,
+    stock: 200,
   },
 ];

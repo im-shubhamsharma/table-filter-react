@@ -1,9 +1,9 @@
 import React from "react";
 import star from "../../assets/star.png";
 
-const SelectedFilters = ({ filters, setFilters }) => {
+const SelectedFilters = ({ filters }) => {
   return (
-    <div>
+    <div className="selected-filter-container">
       Selected Filters
       <div className="selected-filter-options-container">
         {filters.category && (
