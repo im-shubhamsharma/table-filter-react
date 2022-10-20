@@ -18,11 +18,11 @@ const table = () => {
   // pagination code starts----------------------------->
   const [posts, setPosts] = useState(productsData);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(9);
+  const [postPerPage, setPostPerPage] = useState(10);
 
   useEffect(() => {
     setPosts(productsData);
-  }, [productsData]);
+  }, [productsData, postPerPage]);
 
   // Get current posts
   const indexOfLastPost = currentPage * postPerPage;
@@ -53,7 +53,7 @@ const table = () => {
     } else {
       setTableData(currentPost);
     }
-  }, [currentPage, searchInput, posts]);
+  }, [currentPage, searchInput, posts, postPerPage]);
 
   // function to sort tableData starts---------------------->
 
@@ -101,14 +101,14 @@ const table = () => {
       <div>
         {/* Table Header - Search and Add New Button */}
         <div className="table-header">
+          <Link to="/add" className="add-new-btn">
+            <button className="add-new">Add New Product</button>
+          </Link>
           <SearchBar
             data={data}
             setSearchData={setSearchData}
             setSearchInput={setSearchInput}
           />
-          <Link to="/add" className="add-new-btn">
-            <button className="add-new">Add New Product</button>
-          </Link>
         </div>
 
         {/* Table Data */}
@@ -157,6 +157,7 @@ const table = () => {
           postPerPage={postPerPage}
           totalPosts={productsData.length}
           paginate={paginate}
+          setPostPerPage={setPostPerPage}
         />
       </div>
     </div>

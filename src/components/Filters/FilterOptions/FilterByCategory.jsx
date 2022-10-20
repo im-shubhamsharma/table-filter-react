@@ -28,7 +28,7 @@ const FilterByCategory = ({ setFilters }) => {
       <label>
         Filter by category
         <select className="filter-select" onChange={handleChange}>
-          <option>All</option>
+          <option style={{ display: "none" }}>All</option>
           <option>Electronics</option>
           <option>Shoes</option>
           <option>Clothing</option>
